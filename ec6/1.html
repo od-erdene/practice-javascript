@@ -1,0 +1,31 @@
+<div id="output"></div>
+<!-- Load Babel -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.1/babel.min.js"></script>
+<!-- Your custom script here -->
+<script type="text/babel">
+const getMessage = () => "Hello World";
+document.getElementById('output').innerHTML = getMessage();
+
+class Point {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+    }
+    toString() {
+        return `(${this.x}, ${this.y})`;
+    }
+}
+
+class ColorPoint extends Point {
+    constructor(x, y, color) {
+        super(x, y);
+        this.color = color;
+    }
+    toString() {
+        return super.toString() + ' in ' + this.color;
+    }
+}
+
+const cp = new ColorPoint(25, 8, 'green');
+console.log(cp.toString());
+</script>

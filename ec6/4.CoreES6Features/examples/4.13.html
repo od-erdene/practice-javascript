@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.1/babel.min.js"></script>
+</head>
+
+<body>
+    <h3>4.13 From constructors to classes</h3>
+</body>
+
+<script type="text/babel">
+    console.log("4.13 From constructors to classes");
+    class Person {
+        constructor(name) {
+            this.name = name;
+        }
+        describe() {
+            return 'Person called '+this.name;
+        }
+    }
+
+    const p = new Person("odkoo");
+    console.log(p.describe());
+
+    console.log("Derived classes");
+    class Employee extends Person {
+        constructor(name, title) {
+            super(name);
+            this.title = title;
+        }
+        describe() {
+            return super.describe() + ' (' + this.title + ')';
+        }
+    }
+    const p1 = new Employee("Bat", "Subject");
+    console.log(p1.describe());
+</script>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.1/babel.min.js"></script>
+</head>
+
+<body>
+    <h3>4.11 From concat() to the spread operator (...)</h3>
+</body>
+
+<script type="text/babel">
+    console.log("4.11 From concat() to the spread operator (...)");
+    console.log("ES5 – concat()");
+    var arr1 = ['a', 'b'];
+    var arr2 = ['c'];
+    var arr3 = ['d', 'e'];
+
+    console.log(arr1.concat(arr2, arr3));
+        // [ 'a', 'b', 'c', 'd', 'e' ]
+
+    console.log("ES6 – concat()");
+    const arr4 = ['a', 'b'];
+    const arr5 = ['c'];
+    const arr6 = ['d', 'e'];
+
+    console.log([...arr4, ...arr5, ...arr6]);
+        // [ 'a', 'b', 'c', 'd', 'e' ]
+
+</script>
+
+</html>

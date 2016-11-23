@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.1/babel.min.js"></script>
+</head>
+
+<body>
+    <h3>4.6 From for to forEach() to for-of</h3>
+</body>
+
+<script type="text/babel">
+    console.log("4.6 From for to forEach() to for-of");
+    console.log("ES5");
+    var arr = ['a', 'b', 'c'];
+    for (var i=0; i<arr.length; i++) {
+        var elem = arr[i];
+        console.log(elem);
+    }
+
+    arr.forEach(function (elem) {
+        console.log(elem);
+    });
+
+    console.log("ES6");
+    const arr1 = ['a', 'b', 'c'];
+    for (const elem of arr1) {
+        console.log(elem);
+    }
+
+    for (const [index, elem] of arr1.entries()) {
+        console.log(index+'. '+elem);
+    }
+</script>
+
+</html>

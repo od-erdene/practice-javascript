@@ -15,6 +15,9 @@ npm install live-server --save-dev && node_modules/.bin/live-server --port=8080
 It will take a a minute to install,
 but once that's done your `live-server` will start up.
 
-That starts a node.js HTTP server on port 8000.
+That starts a node.js HTTP server on port 8080.
 
 > Visit: http://localhost:8080/ in your web browser
+
+### Use
+*.html - тайлбар бичсэн. Console хэсгээс кодын ажиллагааг харна

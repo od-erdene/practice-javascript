@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.1/babel.min.js"></script>
+</head>
+
+<body>
+    <h1>Sort binary array in linear time</h1>
+    <p>
+      Given an binary array, sort it in linear time and constant space. Output should print contain all zeroes followed by all ones.
+    </p>
+
+    <p>
+      For example,
+      <br>
+      Input: { 1, 0, 1, 0, 1, 0, 0, 1 }<br>
+      Output: { 0, 0, 0, 0, 1, 1, 1, 1 }
+    </p>
+
+    <p>
+      Simple solution would be to count number of 0’s present in the array (say k) and fill first k indexes in the array by 0 and all remaining indexes by 1.
+    </p>
+
+    <p>
+      Alternatively, we can also count number of 1’s present in the array (say k) and     fill last k indexes in the array by 1 and all remaining indexes by 0.
+    </p>
+
+</body>
+
+<script type="text/babel">
+    let arr = [ 0, 0, 1, 0, 1, 1, 0, 1, 0, 0 ];
+
+    console.log(arr.length);
+
+    let barr = sort(arr, arr.length);
+
+    console.log(barr);
+
+    function sort(a, n)
+    {
+      // my ec6
+      let temp1 = [], temp2 = [];
+      for (const x of a) {
+          if(x == 0) {
+            temp1.push(x);
+          } else {
+            temp2.push(x);
+          }
+      }
+
+      console.log(temp1.concat(temp2));
+
+      // convert c++
+      let zeros = 0;
+      for(var i = 0; i < n; i++) {
+        if (a[i] == 0) {
+          zeros ++;
+        }
+      }
+
+      // put 0's in the beginning
+      let k = 0;
+      while(zeros--){
+        a[k++] = 0;
+      }
+
+      // fill all remaining elements by 1
+      while (k < n)
+          a[k++] = 1;
+
+      return a;
+    }
+</script>

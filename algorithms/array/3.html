@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.18.1/babel.min.js"></script>
+</head>
+
+<body>
+  <h1>Sort an array containing 0's, 1's and 2's (Dutch national flag problem)</h1>
+  <p>
+    Given an array containing only 0's, 1's and 2's, sort the array in linear time and using constant space.
+  </p>
+  <p>
+    For example
+    input: {0, 1, 2, 2, 1, 0, 0, 2, 0, 1, 1, 0} <br>
+    output: {0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2} <br>
+  </p>
+</body>
+
+<script type="text/babel">
+  let arr = [0, 1, 2, 2, 1, 0, 0, 2, 0, 1, 1, 0];
+  console.log(arr);
+
+  // my ec6
+  console.log('my: ', arr.sort());
+
+  let barr = threeWayPartiotion(arr, arr.length - 1)
+
+  console.log(barr);
+
+  function threeWayPartiotion(a, end)
+  {
+    let start = 0, mid = 0, pivot = 1;
+
+    while(mid <= end)
+    {
+      if(a[mid] < pivot) // current element is 0
+      {
+        var b = a[start];
+        a[start] = a[mid];
+        a[mid] = b;
+
+        start++;
+        mid++;
+      } else if(a[mid] > pivot){ // current element is 2
+        var b = a[mid];
+        a[mid] = a[end];
+        a[end] = b;
+        end--
+      } else { mid++; } // current element is 1
+
+      //mid++;
+    }
+
+    return a;
+  }
+</script>
